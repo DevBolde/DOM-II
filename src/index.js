@@ -1,23 +1,39 @@
 import './less/index.less'
 
-// Your code goes here!
-// EventNumber 1 (not complete)
-const docBody = document.querySelector('body')
-docBody.style.background = 'darkgray'
-// console.log(docBody)
+// Your code goes here
+const body = document.querySelector('body')
+body.style.background = 'darkgray'
 
-// EventNumber 2 (not complete)
-const busPic = document.querySelector('header')
-// console.log(busPic)
-function onClick(){
-    docBody.style.background('orange')
+// Event Number 1 - Load
+window.onload= function (evt){
+    console.log(`event ${evt.type} fired! Ready to go!`)
+const heading = document.querySelector('h1')
+heading.textContent = 'READY TO GO!!'
+// Event Number 2 - Copy
+window.addEventListener('copy', ()=>{
+    navigator.clipboard.readText()
+    .then(text => {
+        heading.textContent += text
+    })
+})
+// Event Number 3 - Click
+window.addEventListener('click', () =>{
+    body.style.removeProperty('background')
+})
+// Event Number 4 - Click
+body.addEventListener('click', evt => {
+    evt.target.classList.toggle('mirror')
+})
+// Event Number 5 - dblclick (Double Click)
+document.body.addEventListener('dblclick', evt => {
+    evt.target.outerHTML = ''
+})
+// Event Number 6 - keydown
+window.addEventListener('keydown', evt =>{
+ if (evt.key == 6) {
+    document.body.innerHTML = 'YOU RAN ORDER 66';
+ }
+})
+// Event Number 7 - 
 }
-    busPic.addEventListener('click', onClick)
-
-// EventNumber 3 (not compolete)
-const home = document.querySelector('header nav a:nth-of-type(1)')    
-
-
-// EventNumber 4 (not complete)
-const contentDestination = document.querySelector('.content-destination')
-console.log(contentDestination)
+ 
