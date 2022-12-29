@@ -34,6 +34,23 @@ window.addEventListener('keydown', evt =>{
     document.body.innerHTML = 'YOU RAN ORDER 66';
  }
 })
-// Event Number 7 - 
+// Event Number 7 - mousemove
+document.body.addEventListener('mousemove', evt => {
+    const {clientX, clientY} = evt;
+    // console.log(`mouse is at ${clientX}, ${clientY}`)
+})
+// Event Number 8 & 9 - mouseenter and mouseleave
+const destinations = document.querySelectorAll('.destination')
+for(let destination of destinations){
+    destination.addEventListener('mouseenter', () => {
+        console.log(destination)
+        destination.style.fontWeight = 'bold'
+    })
+    destination.addEventListener('mouseleave', ()=>{
+        setTimeout(() =>{
+            destination.style.fontWeight = 'initial'
+        }, 200)
+    })
+}
 }
  
